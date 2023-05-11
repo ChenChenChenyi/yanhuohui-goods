@@ -1,13 +1,11 @@
-package com.chenyi.yanhuohui.goods.goodsEntity;
+package com.chenyi.yanhuohui.goods.goodsentity;
 
 import lombok.Data;
 
 import java.math.BigDecimal;
 
 @Data
-public class Goods {
-
-    private Integer id;
+public class GoodsDTO {
 
     private Integer thirdSpuId;
 
@@ -18,5 +16,4 @@ public class Goods {
     private String param;
 
     private String detail;
-
 }

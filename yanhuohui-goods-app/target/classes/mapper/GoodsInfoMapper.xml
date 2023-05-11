@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chenyi.yanhuohui.goods.mapper.GoodsInfoMapper">
+    <select id="queryAll" resultType="com.chenyi.yanhuohui.goods.goodsentity.GoodsInfo">
+        select * from goods_info
+    </select>
+
+    <insert id="add" parameterType="com.chenyi.yanhuohui.goods.goodsentity.GoodsInfo">
+        insert into goodsInfo values (#{username},#{password})
+    </insert>
+
+    <select id="queryByName" resultType="com.chenyi.yanhuohui.goods.goodsentity.GoodsInfo">
+        select * from goods_info where goods_info_name = #{goodsInfoName}
+    </select>
+
+</mapper>

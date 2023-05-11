@@ -1,4 +1,4 @@
-package com.chenyi.yanhuohui.goods.goodsEntity;
+package com.chenyi.yanhuohui.goods.goodsentity;
 
 import lombok.Data;
 

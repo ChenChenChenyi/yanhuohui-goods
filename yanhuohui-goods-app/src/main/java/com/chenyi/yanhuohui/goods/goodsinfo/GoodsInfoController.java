@@ -3,6 +3,7 @@ package com.chenyi.yanhuohui.goods.goodsinfo;
 import com.chenyi.yanhuohui.goods.goodsentity.GoodsInfo;
 import com.chenyi.yanhuohui.goods.goodsentity.GoodsInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +15,9 @@ import java.util.List;
 @RequestMapping("/goodsInfo")
 public class GoodsInfoController {
     @Autowired
-    GoodsInfoService goodsInfoService;
+    private GoodsInfoService goodsInfoService;
+    @Autowired
+    private LoadBalancerClient loadBalancerClient;
 
     @GetMapping("/query-all")
     public List<GoodsInfo> queryAll(){

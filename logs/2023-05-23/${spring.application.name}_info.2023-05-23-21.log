@@ -1,0 +1,34 @@
+[${project.name}][${env:SERVER_PORT}] 2023-05-23 21:47:04,328 WARN [dubbo-client-idleCheck-thread-1][ReconnectTimerTask.java:55] -  [DUBBO] Reconnect to channel HeaderExchangeClient [channel=org.apache.dubbo.remoting.transport.netty4.NettyClient [/172.21.240.1:55074 -> /172.21.240.1:20880]], because heartbeat read idle time out: 180000ms, dubbo version: 2.7.13, current host: 172.21.240.1
+[${project.name}][${env:SERVER_PORT}] 2023-05-23 21:47:07,347 ERROR [com.alibaba.nacos.client.Worker][LoggerUtils.java:99] - Send request fail, request=ConfigBatchListenRequest{headers={}, requestId='null'}, retryTimes=0,errorMessage=java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 3 milliseconds, 220400 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@206a5394[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@40d51ea, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@4455de07, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@ad550f9}}}}}]]
+[${project.name}][${env:SERVER_PORT}] 2023-05-23 21:47:07,356 ERROR [com.alibaba.nacos.client.Worker][ClientWorker.java:878] - Async listen config change error 
+ErrCode:500, ErrMsg:Waited 3000 milliseconds (plus 3 milliseconds, 220400 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@206a5394[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@40d51ea, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@4455de07, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@ad550f9}}}}}]]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:78)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:657)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient.requestProxy(ClientWorker.java:1067)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient.requestProxy(ClientWorker.java:1042)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient.executeConfigListen(ClientWorker.java:831)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$4.run(ClientWorker.java:748)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 3 milliseconds, 220400 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@206a5394[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@40d51ea, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@4455de07, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@ad550f9}}}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508)
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:76)
+	... 13 more
+[${project.name}][${env:SERVER_PORT}] 2023-05-23 21:47:07,892 WARN [com.alibaba.nacos.client.remote.worker][NamingGrpcRedoService.java:82] - Grpc connection disconnect, mark to redo
+[${project.name}][${env:SERVER_PORT}] 2023-05-23 21:47:07,933 WARN [nacos-grpc-client-executor-530][LoggerUtils.java:86] - [1684840633678_115.227.7.6_55075]Ignore error event,isRunning:true,isAbandon=true
+[${project.name}][${env:SERVER_PORT}] 2023-05-23 21:47:07,956 WARN [com.alibaba.nacos.client.remote.worker][NamingGrpcRedoService.java:89] - mark to redo completed
+[${project.name}][${env:SERVER_PORT}] 2023-05-23 21:47:08,150 WARN [com.alibaba.nacos.client.remote.worker][NamingGrpcRedoService.java:82] - Grpc connection disconnect, mark to redo
+[${project.name}][${env:SERVER_PORT}] 2023-05-23 21:47:08,152 WARN [com.alibaba.nacos.client.remote.worker][NamingGrpcRedoService.java:89] - mark to redo completed
+[${project.name}][${env:SERVER_PORT}] 2023-05-23 21:47:08,152 WARN [nacos-grpc-client-executor-539][LoggerUtils.java:86] - [1684840633144_115.227.7.6_55055]Ignore error event,isRunning:true,isAbandon=true
+[${project.name}][${env:SERVER_PORT}] 2023-05-23 21:47:08,822 WARN [nacos-grpc-client-executor-539][LoggerUtils.java:86] - [1684840622061_115.227.7.6_55019]Ignore error event,isRunning:true,isAbandon=true
+[${project.name}][${env:SERVER_PORT}] 2023-05-23 21:47:09,790 WARN [com.alibaba.nacos.client.remote.worker][NamingGrpcRedoService.java:82] - Grpc connection disconnect, mark to redo
+[${project.name}][${env:SERVER_PORT}] 2023-05-23 21:47:09,791 WARN [com.alibaba.nacos.client.remote.worker][NamingGrpcRedoService.java:89] - mark to redo completed
+[${project.name}][${env:SERVER_PORT}] 2023-05-23 21:47:09,791 WARN [nacos-grpc-client-executor-567][LoggerUtils.java:86] - [1684840631249_115.227.7.6_55026]Ignore error event,isRunning:true,isAbandon=true
+[${project.name}][${env:SERVER_PORT}] 2023-05-23 21:47:09,791 WARN [nacos-grpc-client-executor-700][LoggerUtils.java:86] - [1684840632670_115.227.7.6_55053]Ignore error event,isRunning:true,isAbandon=true
+[${project.name}][${env:SERVER_PORT}] 2023-05-23 21:47:09,962 WARN [nacos-grpc-client-executor-533][LoggerUtils.java:86] - [1684840634031_115.227.7.6_55076]Ignore error event,isRunning:true,isAbandon=true

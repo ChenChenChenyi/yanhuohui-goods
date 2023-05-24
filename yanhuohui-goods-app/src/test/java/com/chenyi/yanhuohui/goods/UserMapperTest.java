@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.chenyi.yanhuohui.goods.pojo.User;
+import com.chenyi.yanhuohui.goods.entity.User;
 import com.chenyi.yanhuohui.goods.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;

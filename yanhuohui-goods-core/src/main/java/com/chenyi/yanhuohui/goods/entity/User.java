@@ -1,4 +1,4 @@
-package com.chenyi.yanhuohui.goods.pojo;
+package com.chenyi.yanhuohui.goods.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

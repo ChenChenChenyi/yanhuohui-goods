@@ -1,4 +1,4 @@
-package com.chenyi.yanhuohui.goods.service;
+package com.chenyi.yanhuohui.goods.api;
 public interface TestServiceApi {
     void hello();
 }

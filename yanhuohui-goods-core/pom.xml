@@ -69,6 +69,7 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
+
         <!--springboot默认是logback日志框架, 需先排除此依赖, 否则会和log4j2产生jar包冲突-->
         <!--但是这种排除方式不一定有效，因为可能别的依赖包里也集成了默认的日志，这样的话项目启动依旧会报冲突-->
         <!-- 全局排除spring-boot-starter-logging相关所有依赖 -->

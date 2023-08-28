@@ -2,21 +2,15 @@ package com.chenyi.yanhuohui.goods.service;
 
 import com.chenyi.yanhuohui.goods.api.MerchantService;
 import com.chenyi.yanhuohui.goods.dto.MerchantDTO;
-import com.chenyi.yanhuohui.goods.entity.Merchant;
-import com.chenyi.yanhuohui.goods.mapper.MerchantMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by Administrator.
  */
-@DubboService
 @Slf4j
 public class MerchantServiceImpl implements MerchantService {
 
-    @Autowired
-    MerchantMapper merchantMapper;
 
 //    @Autowired
 //    StoreMapper storeMapper;
@@ -32,19 +26,8 @@ public class MerchantServiceImpl implements MerchantService {
 
     @Override
     public MerchantDTO queryMerchantById(Long id) {
-//        Merchant merchant = merchantMapper.selectById(id);
-////        MerchantDTO merchantDTO = new MerchantDTO();
-////        merchantDTO.setId(merchant.getId());
-////        merchantDTO.setMerchantName(merchant.getMerchantName());
-//        //....
-//        return MerchantConvert.INSTANCE.entity2dto(merchant);
 
-        Merchant merchant = merchantMapper.selectById(id);
-        MerchantDTO merchantDTO = new MerchantDTO();
-        merchantDTO.setId(merchant.getId());
-//设置其它属性...
-        return merchantDTO;
-
+        return null;
     }
 
 //    /**

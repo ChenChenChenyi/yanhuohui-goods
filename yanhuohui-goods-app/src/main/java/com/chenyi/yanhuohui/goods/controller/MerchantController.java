@@ -1,12 +1,8 @@
 package com.chenyi.yanhuohui.goods.controller;
 
 
-import com.chenyi.yanhuohui.goods.api.MerchantService;
-import com.chenyi.yanhuohui.goods.dto.MerchantDTO;
-import com.chenyi.yanhuohui.setting.api.GoodsInfoService;
-import io.swagger.annotations.*;
-import org.apache.dubbo.config.annotation.DubboReference;
-import org.springframework.web.bind.annotation.*;
+import io.swagger.annotations.Api;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author Administrator
@@ -16,25 +12,26 @@ import org.springframework.web.bind.annotation.*;
 @Api(value="商户平台应用接口",tags = "商户平台应用接口",description = "商户平台应用接口")
 public class MerchantController {
 
-    @DubboReference  //注入的远程调用的接口
-    MerchantService merchantService;
-    @DubboReference
-    GoodsInfoService goodsInfoService;
-
-//    @Autowired //注入本地的bean
-//    SmsService smsService;
+//    @DubboReference  //注入的远程调用的接口
+//    MerchantService merchantService;
+//    @DubboReference
+//    GoodsInfoService goodsInfoService;
 //
-//    @Autowired
-//    FileService fileService;
-
-    @ApiOperation(value="根据id查询商户信息")
-    @GetMapping("/merchants/{id}")
-    public MerchantDTO queryMerchantById(@PathVariable("id") Long id){
-        goodsInfoService.fetchGoodsInfoDetail();
-
-        MerchantDTO merchantDTO = merchantService.queryMerchantById(id);
-        return merchantDTO;
-    }
+////    @Autowired //注入本地的bean
+////    SmsService smsService;
+////
+////    @Autowired
+////    FileService fileService;
+//
+//    @ApiOperation(value="根据id查询商户信息")
+//    @GetMapping("/merchants/{id}")
+//    public MerchantDTO queryMerchantById(@PathVariable("id") Long id){
+//        goodsInfoService.fetchGoodsInfoDetail();
+//
+//        MerchantDTO merchantDTO = merchantService.queryMerchantById(id);
+//        return merchantDTO;
+//    }
+//    JSONArray data = JSON.parseArray(text);
 
 //    @ApiOperation("获取登录用户的商户信息")
 //    @GetMapping(value="/my/merchants")

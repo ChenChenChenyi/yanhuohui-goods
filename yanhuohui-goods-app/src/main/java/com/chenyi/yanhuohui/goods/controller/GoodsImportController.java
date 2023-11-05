@@ -17,4 +17,5 @@ public class GoodsImportController {
         jdGoodsImportService.importGoodsCategories();
         return "请求发送成功！";
     }
+
 }

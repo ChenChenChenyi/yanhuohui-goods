@@ -7,17 +7,17 @@ import com.chenyi.yanhuohui.common.base.exception.SbcRuntimeException;
 import com.chenyi.yanhuohui.goods.bean.dto.JDResponseDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.*;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
-import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Slf4j
@@ -34,7 +34,7 @@ public class JDRestTemplate {
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 
         //设置访问参数
-        MultiValueMap<String, String> multiValueMap= new LinkedMultiValueMap<String, String>();
+       MultiValueMap<String, String> multiValueMap= new LinkedMultiValueMap<String, String>();
         for (Map.Entry<String, String> entry : paramMap.entrySet()) {
             multiValueMap.put(entry.getKey(), Arrays.asList(entry.getValue()));
         }

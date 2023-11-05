@@ -5,12 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.beans.Transient;
 import java.util.List;
 
 @Slf4j
 @Service
 public class GoodsImageService {
+
 
     @Autowired
     private GoodsImageRepository goodsImageRepository;

@@ -3,6 +3,8 @@ package com.chenyi.yanhuohui.goods.bean.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 public class JDGetSellPriceDTO {
@@ -12,15 +14,21 @@ public class JDGetSellPriceDTO {
      */
     private String skuId;
 
-    private String jdPrice;
+    /**
+     * 划线价
+     */
+    private BigDecimal jdPrice;
 
-    private String price;
+    /**
+     * 售卖价
+     */
+    private BigDecimal price;
 
-    private String marketPrice;
+    private BigDecimal marketPrice;
 
     private String tax;
 
-    private String taxPrice;
+    private BigDecimal taxPrice;
 
-    private String nakedPrice;
+    private BigDecimal nakedPrice;
 }

@@ -6,7 +6,6 @@ import com.chenyi.yanhuohui.goods.bean.dto.JDResponseDTO;
 import com.chenyi.yanhuohui.goods.goodsimage.GoodsImage;
 import com.chenyi.yanhuohui.goods.goodsimage.GoodsImageService;
 import com.chenyi.yanhuohui.goods.jd.JDGoodsDetailResponseDTO;
-import com.chenyi.yanhuohui.goods.jd.SimilarSkuResponseDTO;
 import com.chenyi.yanhuohui.goods.utils.RedisUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,6 +21,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @SpringBootTest
@@ -99,6 +99,27 @@ public class SpringbootRestTemplateTests {
 
     @Test
     public void getGoodsDetail(){
-        List<SimilarSkuResponseDTO> responseDTOS = jdGoodsService.getSimilarSku("8355057");
+        JDGoodsDetailResponseDTO responseDTO = jdGoodsService.getGoodsDetail("206892");
+        List<String> cateIds = Arrays.asList(responseDTO.getCategory().split(";"));
+        jdGoodsImportService.importGeneralParam(Long.valueOf(cateIds.get(2)),responseDTO.getCategoryAttrs());
     }
+
+    @Test
+    public void getSellPrice(){
+        List<String> skuList = new ArrayList<>();
+        skuList.add("8289496");
+        skuList.add("8355057");
+        skuList.add("100005891866");
+        List<JDGetSellPriceDTO> responseDTO = jdGoodsService.getSellPrice(skuList);
+    }
+
+    @Test
+    public void importSellPrice(){
+        List<String> skuList = new ArrayList<>();
+        skuList.add("8289496");
+        skuList.add("8355057");
+        skuList.add("100005891866");
+        jdGoodsImportService.importGoodsPrice(skuList);
+    }
+
 }

@@ -1,0 +1,50 @@
+#server:
+#  port: 8090
+#
+#spring:
+#  # -----------------------------------------
+#  # spring国际化的使用，用来通过错误码映射得到错误说明
+#  # -----------------------------------------
+#  message:
+#    basename: i18n/ResultCode
+#
+#  # -----------------------------------------
+#  # dataSource数据源配置
+#  # -----------------------------------------
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/yanhuohui_goods?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+#    username: root
+#    password: 123
+#
+## MyBatis mapper.xml路径配置
+#mybatis:
+#  mapper-locations: "classpath:mapper/*Mapper.xml"
+#  type-aliases-package: "com.chenyi.yanhuohui.goods.mapper.*"
+#
+#  #开启驼峰命名
+#  configuration:
+#    map-underscore-to-camel-case: true
+#
+#dubbo:
+#  scan:
+#  # dubbo 服务扫描基准包
+#    base‐packages: com.chenyi.yanhuohui.goods.service
+#  protocol:
+#    # dubbo 协议
+#    name: dubbo
+#    # dubbo 协议端口
+#    port: 20891
+#  registry:
+#    address: nacos://175.24.186.119:8848
+#  application:
+#    qos‐enable: false #dubbo运维服务是否开启
+#  consumer:
+#    check: false #启动时就否检查依赖的服务
+#
+#
+#
+#
+#
+#
+#
+#

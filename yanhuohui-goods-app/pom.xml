@@ -34,6 +34,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
 
         <!--    默认版本是1.0.10，启动会报错，必须手动指定为1.0.11-->
         <dependency>
@@ -41,6 +47,8 @@
             <artifactId>spring-context-support</artifactId>
             <version>1.0.11</version>
         </dependency>
+
+
     </dependencies>
 
     <build>

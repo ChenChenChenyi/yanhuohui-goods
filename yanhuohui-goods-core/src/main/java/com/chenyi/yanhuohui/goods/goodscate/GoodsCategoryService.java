@@ -14,6 +14,7 @@ public class GoodsCategoryService {
 
     @Autowired
     private GoodsCategoryRepository goodsCategoryRepository;
+    
 
     @Transactional
     public void saveJDCategoryVO(List<JDCategoryVO> jdCategoryVOS){

@@ -2,8 +2,8 @@ package com.chenyi.yanhuohui.goods.jdgoods;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
-import com.chenyi.yanhuohui.common.base.entity.CommonErrorCode;
-import com.chenyi.yanhuohui.common.base.exception.SbcRuntimeException;
+import com.chenyi.yanhuohui.common.domain.CommonErrorCode;
+import com.chenyi.yanhuohui.common.base.exception.YhhRuntimeException;
 import com.chenyi.yanhuohui.goods.bean.dto.JDResponseDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +46,7 @@ public class JDRestTemplate {
         JDResponseDTO<T> jdResponseDTO = JSONObject.parseObject(resText, new TypeReference<JDResponseDTO<T>>(clazz){});
         if(!jdResponseDTO.isSuccess()){
             log.error("调用京东失败，调用结果：{}",jdResponseDTO.toString());
-            throw new SbcRuntimeException(CommonErrorCode.FAILED);
+            throw new YhhRuntimeException(CommonErrorCode.FAILED);
         }else {
             return jdResponseDTO.getResult();
         }

@@ -1,7 +1,7 @@
 package com.chenyi.yanhuohui.goods.goodsprice;
 
 
-import com.chenyi.yanhuohui.common.base.exception.SbcRuntimeException;
+import com.chenyi.yanhuohui.common.base.exception.YhhRuntimeException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -49,7 +49,7 @@ public class GoodsPriceService {
      * 通过ID获取一个存在的实体
      */
     public GoodsPrice selectById(Long id) {
-        return goodsPriceRepository.findById(id).orElseThrow(() -> new SbcRuntimeException());
+        return goodsPriceRepository.findById(id).orElseThrow(() -> new YhhRuntimeException());
     }
 
     /**
@@ -63,7 +63,7 @@ public class GoodsPriceService {
      * 通过条件获取一个存在的实体
      */
     public GoodsPrice selectOne(Specification<GoodsPrice> spec) {
-        return goodsPriceRepository.findOne(spec).orElseThrow(() -> new SbcRuntimeException());
+        return goodsPriceRepository.findOne(spec).orElseThrow(() -> new YhhRuntimeException());
     }
 
     /**

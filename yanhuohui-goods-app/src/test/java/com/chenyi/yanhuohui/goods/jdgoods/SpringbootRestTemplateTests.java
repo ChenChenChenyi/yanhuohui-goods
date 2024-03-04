@@ -42,7 +42,7 @@ public class SpringbootRestTemplateTests {
 
         //构建json请求参数
         MultiValueMap<String, String> map= new LinkedMultiValueMap<>();
-        map.add("token", "xPwLXX09ntkUzoxgF1AEqtBzL");
+        map.add("token", "RXFL6yfuwIJI178HrDiLxQdHn");
         map.add("sku", "100028025335");
         //设置请求头请求格式
         HttpHeaders headers = new HttpHeaders();

@@ -15,8 +15,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
-@Document(indexName = "jdesgoodsinfo",createIndex = true)
-public class JdEsGoodsInfo {
+@Document(indexName = "jdesgoodsinfo_backup", type = "_doc", replicas = 1, shards = 1, createIndex = true)
+public class JdEsGoodsInfoBackup {
 
     @Id
     @Field(type = FieldType.Keyword)

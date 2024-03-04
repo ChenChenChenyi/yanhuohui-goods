@@ -1,17 +1,24 @@
 package com.chenyi.yanhuohui.goods.controller;
 
-import com.chenyi.yanhuohui.goods.dto.MerchantDTO;
-import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.chenyi.yanhuohui.customer.provider.CustomerQueryProvider;
+import com.chenyi.yanhuohui.goods.api.HelloProvider;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.sql.SQLOutput;
-
 @RestController
-public class HelloController {
+public class HelloController implements HelloProvider {
 
-    @GetMapping(value="/hello")
-    public void hello(){
-        System.out.println("Hello chenyi!");
+    @Autowired
+    private CustomerQueryProvider customerQueryProvider;
+
+
+
+    @Override
+    public ResponseEntity hello(){
+        System.out.println("hello goods!");
+        //customerQueryProvider.hello();
+        return new ResponseEntity <> ("SUCCESS!", HttpStatus.OK);
     }
 }

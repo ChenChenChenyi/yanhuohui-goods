@@ -1,6 +1,7 @@
 package com.chenyi.yanhuohui.goods.jdgoods;
 
-import com.chenyi.yanhuohui.common.base.exception.SbcRuntimeException;
+import com.chenyi.yanhuohui.common.base.exception.YhhRuntimeException;
+import com.chenyi.yanhuohui.common.domain.CommonErrorCode;
 import com.chenyi.yanhuohui.goods.bean.dto.JDGetSellPriceDTO;
 import com.chenyi.yanhuohui.goods.goods.*;
 import com.chenyi.yanhuohui.goods.goodscate.GoodsCategoryService;
@@ -184,7 +185,7 @@ public class JDGoodsImportService {
             jdCategoriesResponseDTO = jdGoodsService.getCategores(pageNo,pageSize);
         } catch (Exception e) {
             log.error("京东接口查询商品类目失败，PageNo={},PageSize={}",pageNo,pageSize);
-            throw new SbcRuntimeException(e);
+            throw new YhhRuntimeException(CommonErrorCode.FAILED);
         }
         int totalPageNo = jdCategoriesResponseDTO.getTotalRows()/pageSize+1;
         goodsCategoryService.saveJDCategoryVO(jdCategoriesResponseDTO.getCategorys());
